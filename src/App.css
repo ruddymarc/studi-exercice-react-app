@@ -1,38 +1,72 @@
 .App {
+  position: relative;
+  font-size: calc(10px + 2vmin);
+  max-width: 1200px;
+  margin: auto;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Button,
+.Wrapper,
+.Row-wrapper,
+.Page-wrapper {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.Wrapper,
+.Page-wrapper {
+  position: relative;
+  flex-direction: column;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Row-wrapper {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: .8rem;
+}
+.Page-wrapper {
+  min-height: 100vh;
+}
+.Row-wrapper>img {
+  width: 8rem;
+  height: auto;
+}
+ul.Nav {
+  list-style: none;
+  padding: 0 1em;
+}
+ul.Nav.inline {
+  gap: .8rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+ul.Nav>li:hover,
+.Link:hover {
+  cursor: pointer;
+  border-bottom: thick solid rgba(0, 0, 0, 0.1);
+}
+.Button:hover {
+  cursor: pointer;
+}
+.align-top-right {
+  position: absolute;
+  top: .5em;
+  right: .5em;
+  margin-left: auto;
+}
+.sticky {
+  position: sticky;
+  top: .5em;
+  right: .5em;
+}
+.rounded {
+  border-radius: .5em;
+}
+.circle {
+  border-radius: 10% / 50%;
+}
+.__heading {
+  margin: 0;
+}
+.__content {
+  padding: .5em;
+  text-align: justify;
 }
