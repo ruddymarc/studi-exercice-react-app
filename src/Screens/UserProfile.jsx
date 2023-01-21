@@ -4,7 +4,7 @@ import UserCard from '../Components/UserCard';
 import Section from '../Components/Section';
 import './UserProfile.css';
 
-const HarveyPicture = 'https://dummyimage.com/150/EFEFEF';
+const HarveyPicture = './joseph-gonzalez-iFgRcqHznqg-unsplash.jpg';
 
 function UserProfile() {
   const user = {
