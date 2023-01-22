@@ -1,6 +1,6 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable import/no-unresolved */
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Section.css';
 
 function Section({ title, children }) {
@@ -13,5 +13,15 @@ function Section({ title, children }) {
     </section>
   );
 }
+
+Section.defaultProps = {
+  title: '',
+  children: null,
+};
+
+Section.propTypes = {
+  title: PropTypes.string,
+  children: PropTypes.node,
+};
 
 export default Section;

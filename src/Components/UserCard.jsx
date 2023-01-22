@@ -1,7 +1,6 @@
-/* eslint-disable import/no-dynamic-require */
-/* eslint-disable react/prop-types */
 /* eslint-disable import/no-unresolved */
 import React from 'react';
+import PropTypes from 'prop-types';
 import Section from './Section';
 import './UserCard.css';
 
@@ -28,5 +27,26 @@ function UserCard({
     </header>
   );
 }
+
+UserCard.defaultProps = {
+  picture: 'https://dummyimage.com/200/fff/aaa',
+  firstname: '',
+  lastname: '',
+  age: 0,
+  location: { country: '', city: '' },
+  interests: [],
+};
+
+UserCard.propTypes = {
+  picture: PropTypes.string,
+  firstname: PropTypes.string,
+  lastname: PropTypes.string,
+  age: PropTypes.number,
+  location: PropTypes.exact({
+    country: PropTypes.string,
+    city: PropTypes.string,
+  }),
+  interests: PropTypes.arrayOf(PropTypes.string),
+};
 
 export default UserCard;
