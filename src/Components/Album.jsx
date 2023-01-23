@@ -1,6 +1,7 @@
-/* eslint-disable react/prop-types */
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable import/no-unresolved */
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Album.css';
 
 function Album({
@@ -72,5 +73,26 @@ function Album({
     </div>
   );
 }
+
+Album.defaultProps = {
+  title: '',
+  performer: { name: '' },
+  art: '',
+  year: '',
+  tracks: [],
+};
+
+Album.propTypes = {
+  title: PropTypes.string,
+  performer: PropTypes.shape({
+    name: PropTypes.string,
+  }),
+  art: PropTypes.string,
+  year: PropTypes.string,
+  tracks: PropTypes.arrayOf(PropTypes.exact({
+    title: PropTypes.string,
+    length: PropTypes.number,
+  })),
+};
 
 export default Album;
