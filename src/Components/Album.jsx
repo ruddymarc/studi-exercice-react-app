@@ -76,26 +76,23 @@ function Album({
 }
 
 Album.defaultProps = {
-  title: '',
   genre: '',
   performer: { name: '' },
-  art: '',
   year: '',
-  tracks: [],
 };
 
 Album.propTypes = {
-  title: PropTypes.string,
+  title: PropTypes.string.isRequired,
   genre: PropTypes.oneOf(['Jazz', 'Blues', 'Rock', 'R&B', 'Classique']),
   performer: PropTypes.shape({
     name: PropTypes.string,
   }),
-  art: PropTypes.string,
+  art: PropTypes.string.isRequired,
   year: PropTypes.string,
   tracks: PropTypes.arrayOf(PropTypes.exact({
     title: PropTypes.string,
     length: PropTypes.number,
-  })),
+  })).isRequired,
 };
 
 export default Album;
