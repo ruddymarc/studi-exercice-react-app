@@ -1,0 +1,16 @@
+.MenuItem,
+.MenuItem_Name {
+  gap: 1em;
+  display: flex;
+  align-items: center;
+}
+.MenuItem {
+  justify-content: space-between;
+  margin: .8rem;
+  padding: .2em .8em;
+  border-radius: .5em;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.__heading {
+  margin: 0;
+}
