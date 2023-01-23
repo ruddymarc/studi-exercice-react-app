@@ -35,8 +35,8 @@ function UserProfile() {
       />
       <main>
         <Section title="Center of interest">
-          {user.interests.map((label) => (
-            <span className="interest">{label}</span>
+          {user.interests.map((interest) => (
+            <span key={interest} className="interest">{interest}</span>
           ))}
         </Section>
       </main>
