@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import './Album.css';
 
 function Album({
-  title, performer, art, year, tracks,
+  title, genre, performer, art, year, tracks,
 }) {
   const tracksDisplay = tracks.map((song) => (
     <li key={song.title} className="Track">
@@ -66,6 +66,7 @@ function Album({
         <span className="Album__Year">{year}</span>
         <h2 className="Album__Title">{title}</h2>
         <span className="Album__Performer">{performer.name}</span>
+        <span className="Album__Cenre">{genre}</span>
       </div>
       <ul className="Album_Tracks">
         {tracksDisplay}
@@ -76,6 +77,7 @@ function Album({
 
 Album.defaultProps = {
   title: '',
+  genre: '',
   performer: { name: '' },
   art: '',
   year: '',
@@ -84,6 +86,7 @@ Album.defaultProps = {
 
 Album.propTypes = {
   title: PropTypes.string,
+  genre: PropTypes.oneOf(['Jazz', 'Blues', 'Rock', 'R&B', 'Classique']),
   performer: PropTypes.shape({
     name: PropTypes.string,
   }),

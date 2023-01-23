@@ -7,6 +7,7 @@ const LoreArt = 'https://via.placeholder.com/250/AAF/EEF?text=album-art';
 function Albums() {
   const [album] = useState({
     title: 'Lore',
+    genre: 'Progressive',
     art: LoreArt,
     performer: {
       type: 'band',
@@ -28,6 +29,7 @@ function Albums() {
     <div className="Albums Page-wrapper">
       <Album
         title={album.title}
+        genre={album.genre}
         art={album.art}
         performer={album.performer}
         year={album.year}
