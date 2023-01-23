@@ -1,0 +1,39 @@
+.Album_Art {
+  width: 250px;
+  height: auto;
+  border-radius: 1em;
+  border: thick ridge rgba(170, 170, 255, 0.7);
+  box-shadow: 1px 2px 5px 5px rgba(170, 170, 255, 0.8);
+}
+.Album_Tracks {
+  list-style: none;
+  width: 20em;
+}
+.Album__Year {
+  color: rgba(170, 170, 255, 0.5);
+}
+.Album__Title {
+  margin: 0;
+  color: rgba(170, 170, 255, 0.8);
+}
+.Album__Performer {
+  color: rgba(170, 170, 255, 0.8);
+}
+.Track {
+  margin: .8rem;
+  padding: .2em .8em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: rgba(170, 170, 255, 0.8);
+  background-color: rgba(170, 170, 255, 0.2);
+  border-radius: 1em / 50%;
+}
+.Track:hover {
+  font-weight: 500;
+  color: rgb(170, 170, 255);
+}
+.Track svg {
+  height: 1em;
+  width: auto;
+}
