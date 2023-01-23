@@ -10,22 +10,37 @@ function UserCard({
 }) {
   const userFullName = [firstname, lastname].join(' ');
   const userAge = `${age} ${age > 1 ? ' ans' : ' an'}`;
+  const displayInterests = interests.map((interest) => (
+    <span key={interest} className="interest">{interest}</span>
+  ));
+
   return (
-    <header className="UserCard Row-wrapper">
-      <img src={picture} alt="profile-img" />
-      <div className="__content">
-        <h2 className="__heading">{`${userFullName}, ${userAge}`}</h2>
-        <span className="__location">{Object.values(location).join(', ')}</span>
-        <div
-          className="Row-wrapper"
-          style={{ justifyContent: 'center' }}
-        >
-          <Section title="Interests">
-            <span style={{ fontSize: '3em', margin: 'auto' }}>{ interests.length }</span>
-          </Section>
+    <>
+      <header className="UserCard Row-wrapper">
+        <img src={picture} alt="profile-img" />
+        <div className="__content">
+          <h2 className="__heading">{`${userFullName}, ${userAge}`}</h2>
+          <span className="__location">{Object.values(location).join(', ')}</span>
+          <div
+            className="Row-wrapper"
+            style={{ justifyContent: 'center' }}
+          >
+            { interests.length > 0 && (
+              <Section title="Interests">
+                <span style={{ fontSize: '3em', margin: 'auto' }}>{ interests.length }</span>
+              </Section>
+            ) }
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+      <main>
+        { interests.length > 0 && (
+          <Section title="Center of interest">
+            {displayInterests}
+          </Section>
+        ) }
+      </main>
+    </>
   );
 }
 

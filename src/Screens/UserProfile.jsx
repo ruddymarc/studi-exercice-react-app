@@ -1,7 +1,6 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
 import UserCard from '../Components/UserCard';
-import Section from '../Components/Section';
 import './UserProfile.css';
 
 const HarveyPicture = './joseph-gonzalez-iFgRcqHznqg-unsplash.jpg';
@@ -33,13 +32,6 @@ function UserProfile() {
         location={user.location}
         interests={user.interests}
       />
-      <main>
-        <Section title="Center of interest">
-          {user.interests.map((interest) => (
-            <span key={interest} className="interest">{interest}</span>
-          ))}
-        </Section>
-      </main>
     </div>
   );
 }
