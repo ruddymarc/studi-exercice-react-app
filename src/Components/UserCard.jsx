@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable import/no-unresolved */
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -29,19 +30,16 @@ function UserCard({
 }
 
 UserCard.defaultProps = {
-  picture: 'https://dummyimage.com/200/fff/aaa',
-  firstname: '',
-  lastname: '',
-  age: 0,
-  location: { country: '', city: '' },
+  lastname: 'Doe',
+  location: { country: 'United States', city: 'Anaheim' },
   interests: [],
 };
 
 UserCard.propTypes = {
-  picture: PropTypes.string,
-  firstname: PropTypes.string,
+  picture: PropTypes.string.isRequired,
+  firstname: PropTypes.string.isRequired,
   lastname: PropTypes.string,
-  age: PropTypes.number,
+  age: PropTypes.number.isRequired,
   location: PropTypes.exact({
     country: PropTypes.string,
     city: PropTypes.string,
