@@ -1,0 +1,27 @@
+.Wrapper {
+  gap: .8rem;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: stretch;
+  flex-direction: column;
+}
+.TodoList {
+  row-gap: 1.5em;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+}
+.TodoItem {
+  width: 100%;
+  margin: 0;
+  padding: .2em .8em;
+  box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.1);
+}
+.TodoItem span {
+  color: rgba(0, 0, 0, 0.5);
+}
+.TodoItem p {
+  color: rgb(88, 147, 237);
+}
