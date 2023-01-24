@@ -6,7 +6,9 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <Tag />
+      <Tag label="Twich" backgroundColor="rgb(127, 127, 255)" />
+      <Tag label="Youtube" backgroundColor="hsl(180, 50%, 50%)" />
+      <Tag label="instagram" backgroundColor="#FECADA" color="rgba(0, 0, 0, 0.7)" />
       <footer>
         this react app is made with ❤️ by Ruddy Marc
       </footer>
