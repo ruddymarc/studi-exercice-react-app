@@ -1,6 +1,7 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
 import Tag from './Components/Tag';
+import Tabs from './Components/Tabs';
 import './App.css';
 
 function App() {
@@ -9,6 +10,8 @@ function App() {
       <Tag label="Twich" backgroundColor="rgb(127, 127, 255)" />
       <Tag label="Youtube" backgroundColor="hsl(180, 50%, 50%)" />
       <Tag label="instagram" backgroundColor="#FECADA" color="rgba(0, 0, 0, 0.7)" />
+
+      <Tabs />
       <footer>
         this react app is made with ❤️ by Ruddy Marc
       </footer>

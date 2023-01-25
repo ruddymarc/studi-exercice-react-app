@@ -1,0 +1,46 @@
+.Tabs {
+  margin: 0;
+  height: 1.8em;
+  display: flex;
+  list-style: none;
+  overflow: hidden;
+}
+.Tab,
+.ActiveTabContent {
+  border-radius: .5em;
+  border: thin solid rgba(127, 127, 255, 0.2);
+}
+.Tab {
+  padding: .2em .5em 2em; /* top horizontal bottom */
+}
+.Tab:hover {
+  cursor: pointer;
+}
+.ActiveTab {
+  position: relative;
+  border: none;
+  background: rgba(127, 127, 255, 0.5);
+}
+.ActiveTab::before, 
+.ActiveTab::after {
+  position: absolute;
+  content: ' ';
+  /* Draw a right triangle */
+  display : inline-block;
+  height : 0;
+  width : 0;
+  border-bottom : 2em solid rgba(127, 127, 255, 0.5);
+}
+.ActiveTab::before { 
+  border-left : .5em solid transparent;
+  right: 100%; 
+}
+.ActiveTab::after {
+  border-right : .5em solid transparent;
+  left: 100%;
+}
+.ActiveTabContent {
+  padding: .5em;
+  text-align: justify;
+  border: thin solid rgba(0,0,0,0.2);
+}

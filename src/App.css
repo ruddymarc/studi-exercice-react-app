@@ -6,13 +6,13 @@
   text-align: center;
 }
 .Button,
-.Wrapper,
+/* .Wrapper, */
 .Row-wrapper,
 .Page-wrapper {
   display: flex;
   align-items: center;
 }
-.Wrapper,
+/* .Wrapper, */
 .Page-wrapper {
   position: relative;
   flex-direction: column;
