@@ -1,5 +1,6 @@
 /* eslint-disable import/no-unresolved */
 import React, { useState } from 'react';
+import Card from './Card';
 import styles from './Cards.module.css';
 
 const Picture = 'https://via.placeholder.com/350';
@@ -29,16 +30,13 @@ function Cards() {
   return (
     <div className={styles.Cards}>
       { cards.map((card) => (
-        <div className="Card">
-          <img src={card.pucture} alt="card-img" />
-          <div className="CardContainer">
-            <h3 className="CardHeading">{card.name}</h3>
-            <p className="CardDescription">
-              {card.description}
-            </p>
-            <button type="button">en savoir plus</button>
-          </div>
-        </div>
+        <Card
+          key={card.id}
+          picture={card.pucture}
+          name={card.name}
+          description={card.description}
+          onAbort={() => {}}
+        />
       )) }
     </div>
   );
