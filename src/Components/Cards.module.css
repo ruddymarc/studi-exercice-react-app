@@ -1,0 +1,5 @@
+.Cards {
+  gap: .8rem;
+  display: flex;
+  flex-wrap: wrap;
+}
