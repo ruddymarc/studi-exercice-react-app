@@ -2,6 +2,7 @@
 import React from 'react';
 import Tag from './Components/Tag';
 import Tabs from './Components/Tabs';
+import Toasts from './Components/Toasts';
 import './App.css';
 
 function App() {
@@ -12,6 +13,8 @@ function App() {
       <Tag label="instagram" backgroundColor="#FECADA" color="rgba(0, 0, 0, 0.7)" />
 
       <Tabs />
+
+      <Toasts />
       <footer>
         this react app is made with ❤️ by Ruddy Marc
       </footer>

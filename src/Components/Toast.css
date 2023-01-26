@@ -1,0 +1,20 @@
+.Info { background-color: hsl(206, 50%, 50%); }
+.Success { background-color: hsl(150, 50%, 50%); }
+.Warning { background-color: hsl(40, 50%, 50%); }
+.Danger { background-color: hsl(0, 50%, 50%); }
+.Toast {
+  padding: 1rem;
+  color: snow;
+  display: flex;
+  justify-content: space-between;
+  border-radius: .5em;
+}
+.CloseToast {
+  color: inherit;
+  border: none;
+  background: none;
+  font-size: 1em;
+}
+.CloseToast:hover {
+  cursor: pointer;
+}
