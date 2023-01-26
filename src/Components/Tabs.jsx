@@ -3,6 +3,7 @@
 /* eslint-disable import/no-unresolved */
 import React, { useState } from 'react';
 import styles from './Tabs.module.css';
+import Image from './Image';
 
 import ESC from './istockphoto-534129348-1024x1024.jpg';
 
@@ -27,7 +28,7 @@ function Tabs() {
       label: 'Image',
       content: (
         <div>
-          <img src={ESC} alt="ESC 4 en 1" />
+          <Image url={ESC} />
         </div>
       ),
     },
