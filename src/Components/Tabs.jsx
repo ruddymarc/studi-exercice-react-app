@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable import/no-unresolved */
 import React, { useState } from 'react';
-import './Tabs.css';
+import styles from './Tabs.module.css';
 
 import ESC from './istockphoto-534129348-1024x1024.jpg';
 
@@ -49,19 +49,19 @@ function Tabs() {
   const handleTabClick = (tab) => setActiveTab(tab);
 
   return (
-    <div className="Wrapper">
-      <ul className="Tabs">
+    <div className={styles.Wrapper}>
+      <ul className={styles.Tabs}>
         { tabs.map((tab) => (
           <li
             key={tab.id}
             onClick={() => handleTabClick(tab)}
-            className={['Tab', tab.id === activeTab.id ? 'ActiveTab' : null].join(' ')}
+            className={[styles.Tab, tab.id === activeTab.id ? styles.ActiveTab : null].join(' ')}
           >
             {tab.label}
           </li>
         )) }
       </ul>
-      <div className="ActiveTabContent">
+      <div className={styles.ActiveTabContent}>
         {activeTab.content}
       </div>
     </div>
