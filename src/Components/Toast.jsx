@@ -1,15 +1,15 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Toast.css';
+import styles from './Toast.module.css';
 
 const alertTypes = ['Info', 'Success', 'Warning', 'Danger'];
 
 function Toast({ label, alertType, onClose }) {
   return (
-    <p className={['Toast', alertType].join(' ')}>
+    <p className={[styles.Toast, styles[alertType]].join(' ')}>
       {label}
-      <button type="button" className="CloseToast" onClick={() => { onClose(); }}>
+      <button type="button" className={styles.CloseToast} onClick={() => { onClose(); }}>
         &times;
       </button>
     </p>
