@@ -1,27 +1,18 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable react/prop-types */
 import React from 'react';
+import styles from './Tag.module.css';
 
 function Tag({
   label, color, backgroundColor, borderRadius,
 }) {
-  const defaultStyle = {
-    height: '40px',
-    display: 'inline-flex',
-    alignItem: 'center',
-    padding: '0 1rem',
-    margin: '0.5rem',
-  };
-
   return (
     <span
-      className="Tag"
-      style={{
-        ...defaultStyle, color, backgroundColor, borderRadius,
-      }}
+      className={styles.Tag}
+      style={{ color, backgroundColor, borderRadius }}
     >
       <svg
-        style={{ height: '20px', width: 'auto' }}
+        className={styles.TagIcon}
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"

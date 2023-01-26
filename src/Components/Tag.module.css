@@ -1,0 +1,11 @@
+.Tag {
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 1rem;
+  margin: 0.5rem;
+}
+.TagIcon {
+  height: 20px;
+  width: auto;
+}
