@@ -1,0 +1,30 @@
+.CardDetail {
+  display: block;
+  position: sticky;
+  top: 1em;
+  z-index: 999999;
+  background-color: #eff5f2;
+  border-radius: .5em;
+  box-shadow: 3px 3px 10px rgba(0 0 0 / 0.5);
+}
+.CardDetail_Heading {
+  margin: 0;
+  text-align: center;
+}
+.CardDetail_Content {
+  max-height: 80vh;
+  margin: .5em;
+  padding: .5em;
+  overflow: scroll;
+  border: thin inset #eff5f2;
+}
+.Close_CardDetail {
+  color: inherit;
+  border: none;
+  background: none;
+  font-size: 1.5em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-left: auto;
+}
