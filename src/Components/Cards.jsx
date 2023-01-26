@@ -47,7 +47,7 @@ function Cards() {
             picture={card.pucture}
             name={card.name}
             description={card.description}
-            onAbort={() => showAboutModal(card)}
+            onAbout={() => showAboutModal(card)}
           />
         )) }
       </div>

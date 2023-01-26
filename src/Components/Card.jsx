@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './Card.module.css';
 
 function Card({
-  picture, name, description, onAbort,
+  picture, name, description, onAbout,
 }) {
   return (
     <div className={styles.Card}>
@@ -12,7 +12,7 @@ function Card({
         <h3 className={styles.CardHeading}>{name}</h3>
         <p className="CardDescription">{description}</p>
 
-        <button type="button" onClick={onAbort}>en savoir plus</button>
+        <button type="button" onClick={onAbout}>en savoir plus</button>
       </div>
     </div>
   );
@@ -22,7 +22,7 @@ Card.propTypes = {
   picture: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  onAbort: PropTypes.func.isRequired,
+  onAbout: PropTypes.func.isRequired,
 };
 
 export default Card;
