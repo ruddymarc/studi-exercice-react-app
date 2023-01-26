@@ -1,6 +1,7 @@
 /* eslint-disable import/no-unresolved */
 import React, { useState } from 'react';
 import Toast from './Toast';
+import Button from './Button';
 
 function Toasts() {
   const [showInfo, setShowInfo] = useState(false);
@@ -26,10 +27,10 @@ function Toasts() {
   return (
     <>
       <div className="Actions">
-        <button type="button" id="Info" onClick={toggleVisibility}>Afficher toast &quot;Info &quot;</button>
-        <button type="button" id="Success" onClick={toggleVisibility}>Afficher toast &quot;Success &quot;</button>
-        <button type="button" id="Warning" onClick={toggleVisibility}>Afficher toast &quot;Warning &quot;</button>
-        <button type="button" id="Danger" onClick={toggleVisibility}>Afficher toast &quot;Danger &quot;</button>
+        <Button type="Info" onClick={toggleVisibility} label="Afficher toast &quot;Info &quot;" />
+        <Button type="Success" onClick={toggleVisibility} label="Afficher toast &quot;Success &quot;" rounded />
+        <Button type="Warning" onClick={toggleVisibility} label="Afficher toast &quot;Warning &quot;" hoverable />
+        <Button type="Danger" onClick={toggleVisibility} label="Afficher toast &quot;Danger &quot;" rounded hoverable />
       </div>
       <div className="Toasts">
         { showInfo
