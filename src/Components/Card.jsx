@@ -1,6 +1,9 @@
+/* eslint-disable import/no-unresolved */
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Card.module.css';
+
+import Button from './Button';
 
 function Card({
   picture, name, description, onAbout,
@@ -12,7 +15,13 @@ function Card({
         <h3 className={styles.CardHeading}>{name}</h3>
         <p className="CardDescription">{description}</p>
 
-        <button type="button" onClick={onAbout}>en savoir plus</button>
+        <Button
+          rounded
+          hoverable
+          type="Info"
+          label="en savoir plus"
+          onClick={onAbout}
+        />
       </div>
     </div>
   );

@@ -1,0 +1,21 @@
+.Button {
+  margin: .5em;
+  padding: .2em .8em; /* vertical horizontal */
+  cursor: pointer;
+  display: inline-flex;
+  border-radius: .2em;
+  border: thin solid hsl(180, 10%, 50%);
+}
+.Button:hover {
+  box-shadow: 1px 1px 3px 3px rgba(212, 212, 255, 0.8);
+}
+.Rounded { border-radius: 1em / 50%; }
+.Info,
+.Info:hover { color: snow; background: hsl(206, 50%, 50%); border-color: hsl(206, 50%, 50%); }
+.Success,
+.Success:hover { color: snow; background: hsl(150, 50%, 50%); border-color: hsl(150, 50%, 50%); }
+.Warning,
+.Warning:hover { color: snow; background: hsl(40, 50%, 50%); border-color: hsl(40, 50%, 50%); }
+.Danger,
+.Danger:hover { color: snow; background: hsl(0, 50%, 50%); border-color: hsl(0, 50%, 50%); }
+.Hoverable { color: inherit; background: transparent; }
