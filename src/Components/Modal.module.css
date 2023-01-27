@@ -1,4 +1,4 @@
-.CardDetail {
+.Modal {
   display: block;
   position: sticky;
   top: 1em;
@@ -7,18 +7,18 @@
   border-radius: .5em;
   box-shadow: 3px 3px 10px rgba(0 0 0 / 0.5);
 }
-.CardDetail_Heading {
+.Modal_Heading {
   margin: 0;
   text-align: center;
 }
-.CardDetail_Content {
+.Modal_Content {
   max-height: 80vh;
   margin: .5em;
   padding: .5em;
   overflow: scroll;
   border: thin inset #eff5f2;
 }
-.Close_CardDetail {
+.Close_Modal {
   color: inherit;
   border: none;
   background: none;

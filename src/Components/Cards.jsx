@@ -1,7 +1,7 @@
 /* eslint-disable import/no-unresolved */
 import React, { useState } from 'react';
 import Card from './Card';
-import CardDetail from './CardDetail';
+import Modal from './Modal';
 import styles from './Cards.module.css';
 
 const Picture = 'https://via.placeholder.com/350';
@@ -27,7 +27,7 @@ function Cards() {
       description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit...',
     },
   ]);
-  // Show or hide CardDetail
+  // Show or hide Modal
   const [showModal, setShowModal] = useState(false);
   const [activeCard, setActiveCard] = useState(cards[0]);
 
@@ -39,7 +39,11 @@ function Cards() {
 
   return (
     <div className={styles.Wrapper}>
-      { showModal && <CardDetail card={activeCard} onClose={closeAboutModal} /> }
+      { showModal && (
+        <Modal title={activeCard.name} onClose={closeAboutModal}>
+          <img src={activeCard.pucture} alt="modal-img" />
+        </Modal>
+      ) }
       <div className={styles.Cards}>
         { cards.map((card) => (
           <Card
