@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Card.module.css';
+import Image from './Image';
 
 import Button from './Button';
 
@@ -10,7 +11,7 @@ function Card({
 }) {
   return (
     <div className={styles.Card}>
-      <img src={picture} alt="" />
+      <Image url={picture} sizing="Medium" />
       <div className={styles.CardContent}>
         <h3 className={styles.CardHeading}>{name}</h3>
         <p className="CardDescription">{description}</p>

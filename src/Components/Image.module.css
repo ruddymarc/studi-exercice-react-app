@@ -1,0 +1,9 @@
+.Image {
+  display: block;
+  margin: auto;
+  height: auto;
+}
+.Rounded { border-radius: 1em; }
+.FullScreen { width: 100%; }
+.Mrdium { width: 25em; }
+.Small { width: 5em; }
