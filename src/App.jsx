@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <div className="Page-wrapper">
         <Button />
-        <Button backgroundColor="#5352ed" />
+        <Button isLight />
       </div>
 
       <footer>
