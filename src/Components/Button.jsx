@@ -1,6 +1,6 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable import/no-unresolved */
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components/macro';
 
 const ButtonStyled = styled.button`
@@ -15,12 +15,24 @@ const ButtonStyled = styled.button`
   color: ${(props) => (props.isLight ? '#404040' : 'white')};
 `;
 
-function Button({ isLight }) {
+function Button({ label, onClick, isLight }) {
   return (
-    <ButtonStyled isLight={isLight}>
-      Click me
+    <ButtonStyled label={label} isLight={isLight} onClick={onClick}>
+      { label }
     </ButtonStyled>
   );
 }
+
+Button.defaultProps = {
+  label: 'Click me',
+  isLight: false,
+  onClick: null,
+};
+
+Button.propTypes = {
+  label: PropTypes.string,
+  onClick: PropTypes.func,
+  isLight: PropTypes.bool,
+};
 
 export default Button;
