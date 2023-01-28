@@ -1,5 +1,6 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
+import Button from './Components/Button';
 import './App.css';
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
               has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown
               printer took a galley of type and scrambled it to make a type specimen book.
+              <Button />
             </div>
           </div>
           <img
