@@ -11,13 +11,14 @@ const ButtonStyled = styled.button`
   font-size: 0.8rem;
   font-weight: bold;
   text-transform: uppercase;
-  background-color: ${(props) => (props.isLight ? '#E5E5E5' : '#404040')};
-  color: ${(props) => (props.isLight ? '#404040' : 'white')};
+  background-color: ${(props) => props.theme.brand};
+  border: thin solid ${(props) => props.theme.neutral0};
+  color: ${(props) => props.theme.neutral0};
 `;
 
-function Button({ label, onClick, isLight }) {
+function Button({ label, onClick }) {
   return (
-    <ButtonStyled label={label} isLight={isLight} onClick={onClick}>
+    <ButtonStyled label={label} onClick={onClick}>
       { label }
     </ButtonStyled>
   );
@@ -25,14 +26,12 @@ function Button({ label, onClick, isLight }) {
 
 Button.defaultProps = {
   label: 'Click me',
-  isLight: false,
   onClick: null,
 };
 
 Button.propTypes = {
   label: PropTypes.string,
   onClick: PropTypes.func,
-  isLight: PropTypes.bool,
 };
 
 export default Button;
