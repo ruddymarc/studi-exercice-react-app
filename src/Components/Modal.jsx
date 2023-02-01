@@ -4,34 +4,47 @@ import styled from 'styled-components/macro';
 import PropTypes from 'prop-types';
 
 const ModalWrapper = styled.div`
-  display: block;
-  position: sticky;
-  top: 1em;
-  z-index: 999999;
-  background-color: #eff5f2;
-  border-radius: .5em;
-  box-shadow: 3px 3px 10px rgba(0 0 0 / 0.5);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: inherit;
+  font-size: ${(props) => props.theme.fontSize};
+`;
+const ModalStyled = styled.div`
+  width: ${(props) => props.theme.medium};
+  height: 90%;
+  min-height: 10rem;
+  position: relative;
+  border-radius: ${(props) => props.theme.rounded};
+  background-color: ${(props) => props.theme.neutral0};
+  box-shadow: 3px 3px 10px ${(props) => props.theme.neutral100};
 `;
 const CloseModal = styled.button`
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
   color: inherit;
   border: none;
   background: none;
   font-size: 1.5em;
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin-left: auto;
 `;
 const ModalHeading = styled.h2`
   margin: 0;
   text-align: center;
+  color: ${(props) => props.theme.neutral300}
 `;
 const ModalContent = styled.div`
-  max-height: 80vh;
+  height: 90%;
   margin: .5em;
-  padding: .5em;
+  padding: .3rem;
   overflow: scroll;
-  border: thin inset #eff5f2;
+  text-align: justify;
+  font: ${(props) => props.theme.font};
+  border: thin inset ${(props) => props.theme.neutral0};
 `;
 const ModalActions = styled.div`
   display: flex;
@@ -44,10 +57,14 @@ function Modal({
 }) {
   return (
     <ModalWrapper>
-      <CloseModal onClick={onClose}>&times;</CloseModal>
-      <ModalHeading>{title}</ModalHeading>
-      <ModalContent>{children}</ModalContent>
-      <ModalActions>{actions}</ModalActions>
+      <ModalStyled>
+        <CloseModal onClick={onClose}>&times;</CloseModal>
+        <ModalHeading>{title}</ModalHeading>
+        <ModalContent>
+          {children}
+          <ModalActions>{actions}</ModalActions>
+        </ModalContent>
+      </ModalStyled>
     </ModalWrapper>
   );
 }

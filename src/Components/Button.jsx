@@ -4,16 +4,16 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components/macro';
 
 const ButtonStyled = styled.button`
+  cursor: pointer;
   padding: 1rem 2rem;
-  margin: 4rem;
-  border: 0;
-  border-radius: 6px;
-  font-size: 0.8rem;
+  margin: 1rem;
   font-weight: bold;
   text-transform: uppercase;
+  font-size: ${(props) => props.theme.fontSize};
   background-color: ${(props) => props.theme.brand};
-  border: thin solid ${(props) => props.theme.neutral0};
   color: ${(props) => props.theme.neutral0};
+  border-radius: ${(props) => props.theme.rounded};
+  border: ${(props) => props.theme.border ?? ['thin', 'solid', props.theme.neutral0].join(' ')};
 `;
 
 function Button({ label, onClick }) {

@@ -8,7 +8,15 @@ import theme from './theme';
 import './App.css';
 
 function App() {
-  const revertTheme = ({ brand, neutral0 }) => ({ brand: neutral0, neutral0: brand });
+  const revertTheme = ({ ...obj }) => ({
+    ...obj, brand: obj.neutral0, neutral0: obj.brand,
+  });
+  const linkTheme = ({ ...obj }) => ({
+    ...obj, neutral0: obj.brand, brand: 'transparent', border: 'none',
+  });
+  const successTheme = ({ ...obj }) => ({
+    ...obj, brand: obj.success,
+  });
   // Show or hide Modal
   const [showModal, setShowModal] = useState(false);
   const closeModal = () => setShowModal(false);
@@ -16,10 +24,14 @@ function App() {
   // Modal Acttions
   const modalActions = (
     <>
-      <ThemeProvider theme={revertTheme}>
+      <ThemeProvider theme={successTheme}>
+        <ThemeProvider theme={revertTheme}>
+          <Button />
+        </ThemeProvider>
+      </ThemeProvider>
+      <ThemeProvider theme={linkTheme}>
         <Button />
       </ThemeProvider>
-      <Button />
     </>
   );
   return (

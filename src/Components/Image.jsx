@@ -8,6 +8,7 @@ const ImageStyled = styled.img`
   width: 80%;
   margin: auto;
   height: auto;
+  border-radius: ${(props) => props.theme.rounded};
 `;
 
 function Image({ url }) {
