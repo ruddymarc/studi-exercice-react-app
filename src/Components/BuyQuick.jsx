@@ -35,7 +35,7 @@ function BuyQuick() {
         <>
           <h1>Bravo vous venez d'acheter:</h1>
           <h3>
-            <span role="img" aria-label="canard"> </span>
+            <span role="img" aria-label="canard">🐣</span>
             Magnifique canard de bain
           </h3>
         </>
@@ -57,15 +57,17 @@ function BuyQuick() {
             pour acheter
           </h2>
           <h3>
-            <button type="button" className="App-button" onClick={handleBuy}>
-              Acheter
-            </button>
+            <span role="img" aria-label="canard">🐣</span>
+            Canard de bain à 1,99 €
           </h3>
+          <button type="button" className="App-button" onClick={handleBuy}>
+            Acheter
+          </button>
         </>
       ) : ( // Promotion terminert
         <h1>
           Fin de l'offre promotionnelle
-          <span role="img" aria-label="sad"> </span>
+          <span role="img" aria-label="sad">😂</span>
         </h1>
       ) }
     </div>
