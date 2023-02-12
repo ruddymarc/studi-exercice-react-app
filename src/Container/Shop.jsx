@@ -1,5 +1,6 @@
 /* eslint-disable import/no-unresolved */
 import { connect } from 'react-redux';
+import { buyItem, emptyCart } from '../store';
 import Shop from '../Components/Shop';
 
 const mapStateToProps = (state) => ({
@@ -9,10 +10,10 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   onAddItemToCart: (item) => {
-    dispatch({ type: 'BUY_ITEM', payload: item });
+    dispatch(buyItem(item));
   },
   onEmptyCart: () => {
-    dispatch({ type: 'EMPTY_CART' });
+    dispatch(emptyCart());
   },
 });
 

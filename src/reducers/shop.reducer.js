@@ -1,4 +1,7 @@
-/* eslint-disable default-param-last */
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/no-extraneous-dependencies */
+import { createSlice } from '@reduxjs/toolkit';
+
 const initialState = {
   products: [
     {
@@ -23,21 +26,20 @@ const initialState = {
   cart: [],
 };
 
-const shopReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case 'BUY_ITEM':
-      return {
-        ...state,
-        cart: [...state.cart, action.payload],
-      };
-    case 'EMPTY_CART':
-      return {
-        ...state,
-        cart: [],
-      };
-    default:
-      return state;
-  }
-};
+const shopSlice = createSlice({
+  name: 'shop',
+  initialState,
+  reducers: {
+    buyItem: (state, action) => ({
+      ...state,
+      cart: [...state.cart, action.payload],
+    }),
+    emptyCart: (state) => ({
+      ...state,
+      cart: [],
+    }),
+  },
+});
 
-export default shopReducer;
+export const { buyItem, emptyCart } = shopSlice.actions;
+export default shopSlice.reducer;

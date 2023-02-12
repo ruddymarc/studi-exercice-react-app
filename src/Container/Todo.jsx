@@ -1,5 +1,6 @@
 /* eslint-disable import/no-unresolved */
 import { connect } from 'react-redux';
+import { addTodo, markTodoAsDone } from '../store';
 import Todo from '../Components/Todo';
 
 const mapStateToProps = (state) => ({
@@ -8,20 +9,14 @@ const mapStateToProps = (state) => ({
 });
 const mapDispatchToProps = (dispatch) => ({
   onAddTodo: (content) => {
-    dispatch({
-      type: 'ADD_TODO',
-      payload: {
-        id: Math.random(),
-        content,
-        done: false,
-      },
-    });
+    dispatch(addTodo({
+      id: Math.random(),
+      content,
+      done: false,
+    }));
   },
   onMarkTodoAsDone: (todoId) => (
-    dispatch({
-      type: 'MARK_TODO_AS_DONE',
-      payload: todoId,
-    })
+    dispatch(markTodoAsDone(todoId))
   ),
 });
 

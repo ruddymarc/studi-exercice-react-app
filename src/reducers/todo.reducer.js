@@ -1,4 +1,7 @@
-/* eslint-disable default-param-last */
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/no-extraneous-dependencies */
+import { createSlice } from '@reduxjs/toolkit';
+
 const initialState = {
   todos: [],
   user: {
@@ -8,14 +11,15 @@ const initialState = {
   },
 };
 
-const todoReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case 'ADD_TODO':
-      return {
-        ...state,
-        todos: [...state.todos, action.payload],
-      };
-    case 'MARK_TODO_AS_DONE': {
+const todoSlice = createSlice({
+  name: 'todo',
+  initialState,
+  reducers: {
+    addTodo: (state, action) => ({
+      ...state,
+      todos: [...state.todos, action.payload],
+    }),
+    markTodoAsDone: (state, action) => {
       const targetTodo = state.todos.find((todo) => todo.id === action.payload);
       return {
         ...state,
@@ -24,10 +28,9 @@ const todoReducer = (state = initialState, action) => {
           { ...targetTodo, done: true },
         ],
       };
-    }
-    default:
-      return state;
-  }
-};
+    },
+  },
+});
 
-export default todoReducer;
+export const { addTodo, markTodoAsDone } = todoSlice.actions;
+export default todoSlice.reducer;
