@@ -1,48 +1,14 @@
-/* eslint-disable default-param-last */
 /* eslint-disable import/no-unresolved */
-import { createStore } from 'redux';
+import { combineReducers, createStore } from 'redux';
+import shopReducer from './reducers/shop.reducer';
+import todoReducer from './reducers/todo.reducer';
 
-const initialState = {
-  products: [
-    {
-      id: Math.random(),
-      name: 'iPhone XR - 64gb',
-      brand: 'Apple',
-      price: 599,
-    },
-    {
-      id: Math.random(),
-      name: 'Macbook Pro',
-      brand: 'Apple',
-      price: 2129,
-    },
-    {
-      id: Math.random(),
-      name: 'Airpods Pro',
-      brand: 'Apple',
-      price: 279,
-    },
-  ],
-  cart: [],
-};
+const root = combineReducers({
+  shop: shopReducer,
+  todo: todoReducer,
+});
+const store = createStore(root);
 
-const shopReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case 'BUY_ITEM':
-      return {
-        ...state,
-        cart: [...state.cart, action.payload],
-      };
-    case 'EMPTY_CART':
-      return {
-        ...state,
-        cart: [],
-      };
-    default:
-      return state;
-  }
-};
-
-const store = createStore(shopReducer);
+store.subscribe(() => { console.log(store.getState()); });
 
 export default store;

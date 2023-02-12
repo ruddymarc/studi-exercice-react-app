@@ -1,10 +1,10 @@
 /* eslint-disable import/no-unresolved */
 import { connect } from 'react-redux';
-import Shop from '../Shop';
+import Shop from '../Components/Shop';
 
 const mapStateToProps = (state) => ({
-  products: state.products,
-  cart: state.cart,
+  products: state.shop.products,
+  cart: state.shop.cart,
 });
 
 const mapDispatchToProps = (dispatch) => ({
