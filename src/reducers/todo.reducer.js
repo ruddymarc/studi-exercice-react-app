@@ -1,6 +1,11 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/no-extraneous-dependencies */
-import { createSlice } from '@reduxjs/toolkit';
+import { createAction, createSlice } from '@reduxjs/toolkit';
+
+const actions = {
+  addTodo: createAction('addTodo'),
+  markTodoAsDone: createAction('markTodoAsDone'),
+};
 
 const initialState = {
   todos: [],
@@ -14,23 +19,26 @@ const initialState = {
 const todoSlice = createSlice({
   name: 'todo',
   initialState,
-  reducers: {
-    addTodo: (state, action) => ({
-      ...state,
-      todos: [...state.todos, action.payload],
-    }),
-    markTodoAsDone: (state, action) => {
-      const targetTodo = state.todos.find((todo) => todo.id === action.payload);
-      return {
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(actions.addTodo, (state, action) => ({
         ...state,
-        todos: [
-          ...state.todos.filter((todo) => todo.id !== action.payload),
-          { ...targetTodo, done: true },
-        ],
-      };
-    },
+        todos: [...state.todos, action.payload],
+      }))
+      .addCase(actions.markTodoAsDone, (state, action) => {
+        const targetTodo = state.todos.find((todo) => todo.id === action.payload);
+        return {
+          ...state,
+          todos: [
+            ...state.todos.filter((todo) => todo.id !== action.payload),
+            { ...targetTodo, done: true },
+          ],
+        };
+      })
+      .addDefaultCase((state) => state);
   },
 });
 
-export const { addTodo, markTodoAsDone } = todoSlice.actions;
+export const { addTodo, markTodoAsDone } = actions;
 export default todoSlice.reducer;

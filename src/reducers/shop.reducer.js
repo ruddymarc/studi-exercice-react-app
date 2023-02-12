@@ -1,6 +1,11 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/no-extraneous-dependencies */
-import { createSlice } from '@reduxjs/toolkit';
+import { createAction, createSlice } from '@reduxjs/toolkit';
+
+const actions = {
+  buyItem: createAction('buyItem'),
+  emptyCart: createAction('emptyCart'),
+};
 
 const initialState = {
   products: [
@@ -29,17 +34,20 @@ const initialState = {
 const shopSlice = createSlice({
   name: 'shop',
   initialState,
-  reducers: {
-    buyItem: (state, action) => ({
-      ...state,
-      cart: [...state.cart, action.payload],
-    }),
-    emptyCart: (state) => ({
-      ...state,
-      cart: [],
-    }),
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(actions.buyItem, (state, action) => ({
+        ...state,
+        cart: [...state.cart, action.payload],
+      }))
+      .addCase(actions.emptyCart, (state) => ({
+        ...state,
+        cart: [],
+      }))
+      .addDefaultCase((state) => state);
   },
 });
 
-export const { buyItem, emptyCart } = shopSlice.actions;
+export const { buyItem, emptyCart } = actions;
 export default shopSlice.reducer;
